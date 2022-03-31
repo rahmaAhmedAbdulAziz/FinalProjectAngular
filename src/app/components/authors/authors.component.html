@@ -1,0 +1,15 @@
+<div class='container-fluid' style="background-color:  #D4B996FF ;" >
+    <!-- </div> -->
+  <div class="container " >
+    <div class="row">
+      <ng-container *ngFor="let item of productList">
+        <div class="card col-md-3 justify-content-center;" style="background-color: rgb(255, 255, 235);" >
+          <img src="{{item.book_image}}" alt="" class="card col-md-3 justify-content-center;" >
+          <h5 class="itemdata">{{item.publisher}}
+          </h5>
+          <!-- <p class="itemdata">{{item.publisher}}</p> -->
+        
+        
+        </div>
+      </ng-container>
+    </div>

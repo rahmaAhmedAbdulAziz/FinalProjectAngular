@@ -1,0 +1,41 @@
+/* * {
+  font-size: 30px;
+} */
+#text {
+ text-align: center;
+}
+h1 {
+  border-bottom: 1px solid #45b09e;
+  /* bottom: -10px; */
+  /* content: ""; */
+  display: block;
+  /* position: absolute; */
+  width: 40px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  font-family: 'Noto Kufi Arabic','Open Sans','Helvetica Neue',Helvetica,Arial,sans-serif;
+    line-height: 1.84
+}
+label {
+  cursor: default;
+
+  display: inline-block;
+  max-width: 100%;
+  margin-bottom: 5px;
+}
+
+form {
+
+  box-shadow: none!important;
+}
+
+input {
+
+  font-family: 'Noto Naskh Arabic','Helvetica Neue',Helvetica,Arial,sans-serif;
+  line-height: 1.64;
+  /* height: ; */
+}
+
+#icn {
+  margin: 5px;
+}

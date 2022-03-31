@@ -1,0 +1,52 @@
+<div>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <img id='img' src="../../../assets/logoBG.png" alt="" width="60px" height="54px" style="margin: 7px;" />
+
+      <a class="navbar-brand active" href="/">
+        <i class="fa-solid fa-house-chimney m-1"></i>
+        Home</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/categories">
+              <i class="fa-solid fa-bezier-curve m-1"></i>
+              Book Categories</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <i class="fa-solid fa-user-tie m-1"></i>
+              Authors of books</a>
+          </li>
+
+
+        </ul>
+        <div class="d-grid gap-1 d-md-flex justify-content-md-end">
+          <!-- {/*
+          <Link to="/signup" class="btn btn-outline-secondary me-md-1" type="button">
+          {/* onClick={() => {history.push("/login");}} > */}
+          {/* <i class="fa-solid fa-right-to-bracket m-2"></i>
+          sign in</Link> */} -->
+          <a to="login" routerLink="/Login" class=" btn btn-outline-secondary me-md-1" type="button">
+            <i class="fa-solid fa-right-to-bracket m-2"></i>
+            sign in</a>
+
+          <a to="signup" routerLink="/Register" class=" btn btn-secondary me-md-1" type="button">
+            <i class="fa-solid fa-user m-2 m-2"></i>
+            sign up</a>
+
+
+          <!-- {/*
+          <a to="login" class="btn btn-secondary me-md-5" type="button">
+          <i class="fa-solid fa-user m-2"></i>
+          sign up</a>
+          */} -->
+        </div>
+      </div>
+    </div>
+  </nav>
+</div>

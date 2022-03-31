@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css2?family=Hurricane&family=Inspiration&family=Playfair+Display:ital,wght@1,500&display=swap');
+h1 ,h3 {
+    font-family: 'Inspiration', cursive;
+    /* font-family: 'Playfair Display', serif; */
+    font-size: 3rem;
+    text-align: center;
+    font-family: 'Playfair Display', serif; 
+    line-height: 1.4  
+
+}
+
+
+.form-control{
+  border-radius: 5px;
+  margin-left: 0px;
+  width: 90%;
+}
+.search-icon{
+  z-index: 10;
+  position: absolute;
+  right: 15%;
+
+  top: 88%;
+}
+
+
+
+.cart-top{
+  display: flex;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: cornsilk;
+  background-clip: border-box;
+  position: relative;
+  flex-direction: column;
+  border: 1px solid black;
+  border-radius: .25rem;
+}
+.items{
+  margin: 0px 15px;
+  text-align: center;
+}
+.items img{
+  width: 65px;
+}
+.items a:hover{
+  color: blue;
+}
+.itemdata{
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100ch;
+}
+.card{
+  padding: 20px;
+  margin: 40px;
+}
+.card img{
+  width: 200px;
+  height: 200px;
+  margin-bottom: 15px;
+  transition: 0.3s ease-in-out;
+}
+.card img:hover{
+  transition: 0.3s ease-in-out;
+  transform: scale(1.1);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+header {
+    position: relative;
+    align-items: center;
+    display: flex;
+    /* height: 500px; */
+    /* width: 100%; */
+
+}
+
+
+
+.row2 {
+    position: absolute;
+    top: 10px;
+    right: 150px;
+    text-align: center;
+
+}
+
+.row2 h2 {
+    font-size: 3rem;
+    margin-top: 20px;
+    margin-bottom: 15px;
+}
+
+.image {
+
+    height: 90vh;
+
+    clip-path: circle(60% at left 280px);
+    z-index: 1
+}
+
+.header-text {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    width: 40%;
+}
+
+.search input {
+    outline: 0;
+    border: 0;
+    width: 350px;
+    height: 35px;
+    padding: 0 0.5rem;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.search button {
+    outline: none;
+    border: none;
+    height: 36px;
+    
+    
+}
