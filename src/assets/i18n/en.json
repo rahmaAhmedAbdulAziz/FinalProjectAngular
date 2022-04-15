@@ -1,0 +1,12 @@
+{
+"home":{
+    "tittle":"Home page",
+    "welcom_text":"hallo"
+},
+"settings":{
+    "tittle":"Settings page",
+    "welcom_text":"hallo"
+}
+
+
+}

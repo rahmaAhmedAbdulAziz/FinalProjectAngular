@@ -14,11 +14,11 @@ export class AuthorsComponent implements OnInit {
     private cartApi:CartapiService) { }
 
   ngOnInit(): void {
-    this.api.getProduct().subscribe(res=>{
+    this.api.getAll().subscribe(res=>{
       this.productList=res;
-      this.productList.forEach((a:any) => {
-        Object.assign(a,{quantity:1, total:a.price})
-      });
+      // this.productList.forEach((a:any) => {
+      //   Object.assign(a,{quantity:1, total:a.price})
+      // });
     })
   }
   addtoCart(books:any){

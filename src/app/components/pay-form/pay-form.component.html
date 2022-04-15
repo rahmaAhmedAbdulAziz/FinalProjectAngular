@@ -1,94 +1,107 @@
-<div class="accordion container mt-3" id="accordionExample">
+<form #loginForm="ngForm" (ngSubmit)="submitcart()">
 
-    <div class="accordion-item">
-      <h2 class="accordion-header" id="headingOne">
-        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
-          aria-expanded="true" aria-controls="collapseOne">
-          <div class="form-check">
-            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
-            <label class="form-check-label" for="exampleRadios1">
-           1_Address Details          </label>
-          </div>
-        </button>
-      </h2>
-      <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
-        data-bs-parent="#accordionExample">
-        <div class="accordion-body">
-          <input class="form-control form-control-lg" type="text" placeholder="" aria-label=".form-control-lg example">
+<div class="accordion container m-3" id="accordionExample">
+
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="headingOne">
+      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
+        aria-expanded="true" aria-controls="collapseOne">
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+          <label class="form-check-label" for="exampleRadios1">
+         1_Address Details          </label>
         </div>
+      </button>
+    </h2>
+    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+      data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        <input class="form-control form-control-lg" type="text" placeholder="" aria-label=".form-control-lg example">
       </div>
     </div>
-  
-  
-  
-    <div class="accordion-item">
-      <h2 class="accordion-header" id="headingTwo">
-        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo"
-          aria-expanded="false" aria-controls="collapseTwo">
-          <div class="form-check">
-            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
-            <label class="form-check-label" for="exampleRadios2">
-  2_How to puy          </label>
-          </div>
-        </button>
-      </h2>
-      <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
-        data-bs-parent="#accordionExample">
-        <div class="accordion-body">
-          <div class="form-check">
-            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-            <label class="form-check-label" for="flexRadioDefault1">
-  Card   </label>
-  <div class="accordion-body">
-  <form class="row g-3">
-    <div class="col-auto">
-      <label for="staticEmail2" class="visually-hidden">Email</label>
-        <input type="text" readonly class="form-control-plaintext" id="staticEmail2" value="number">
-      </div>
-      <div class="col-auto">
-        <label for="inputPassword2" class="visually-hidden">Password</label>
-        <input type="password" class="form-control" id="inputPassword2" placeholder="Password">
-      </div>
-      <div class="col-auto">
-        <button type="submit" class="btn btn-primary mb-3">Confirm identity</button>
-      </div>
-    </form>
-          </div>
-        
-          
-        </div>
-        <div class="form-check">
-          <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
-          <label class="form-check-label" for="flexRadioDefault2">
-            Cash On Delivery    </label>
-            <div class="accordion-body">
-              For more secure and contactless delivery we recommend using Jumia Pay to stay safe and cashless.
-  
-              When you choose Cash on delivery, you can pay for your order in cash when you receive your shipment at home or Jumia’s pick-up stations.
-              
-                  Egyptian pounds is accepted only.
-                  Please provide the specified amount only when paying for the possibility that there will be enough cash with the delivery representative if a value is paid higher than the requested one.
-                  You must pay for the product before opening the shipment. We remind you that you can return the product yourself through the application or site in case of an industrial defect or non-conformity with specifications.
-              
-                  Just click on your account > View the details > Apply for a return > Enter the required data. 
-        </div>
-      </div>
+  </div>
+  <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+    <div class="accordion-body">
+
+    </div>
+  </div>
+
+<div class="accordion-item">
+  <h2 class="accordion-header" id="headingTwo">
+    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+      2_How to puy     </button>
+  </h2>
+  <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+    <div class="accordion-body">
       <div class="form-check">
+        <input class="form-check-input" #radio1 type="radio" required name="flexRadioDefault" id="flexRadioDefault1">
+        <label class="form-check-label" for="flexRadioDefault1">
+          Card   
+        </label>
+        <div class="accordion-body">
+          <form class="row g-3">
+            <div class="col-auto">
+              <label for="staticEmail2" class="visually-hidden">Email</label>
+                <input type="text" readonly class="form-control-plaintext" id="staticEmail2" value="number">
+              </div>
+              <div class="col-auto">
+                <label for="inputPassword2" class="visually-hidden">Password</label>
+                <input type="password" class="form-control" id="inputPassword2" placeholder="Password">
+              </div>
+              <div class="col-auto">
+                <button (click)="submitcart()" type="submit" class="btn btn-primary mb-3">Confirm identity</button>
+              </div>
+            </form>
+                  </div>
+                
+                  
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingTwo">
+                    <button class="accordion-button collapsed"  type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                      Cash On Delivery       </button>
+                  </h2>
+                  <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                      <div class="form-check">
+                        <input class="form-check-input" #radio2 type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                        <label class="form-check-label" for="flexRadioDefault1">
+                          For more secure and contactless delivery we recommend using Jumia Pay to stay safe and cashless.
+
+                          When you choose Cash on delivery, you can pay for your order in cash when you receive your shipment at home or Jumia’s pick-up stations.
+                          
+                              Egyptian pounds is accepted only.
+                              Please provide the specified amount only when paying for the possibility that there will be enough cash with the delivery representative if a value is paid higher than the requested one.
+                              You must pay for the product before opening the shipment. We remind you that you can return the product yourself through the application or site in case of an industrial defect or non-conformity with specifications.
+                          
+                              Just click on your account > View the details > Apply for a return > Enter the required data.    
+                        </label>
+                        <button (click)="submitclose()" type="submit"
+                        class="btn btn-primary mb-3" class="btn btn-primary" data-bs-toggle="button" 
+                         >
+                         <!-- [disabled]="!radio1.checked" -->
+
+                        </button>
+      <!-- <div class="form-check">
         <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
         <label class="form-check-label" for="flexRadioDefault2">
-          JumiaPay with Fawry    </label>
+          Cash On Delivery        </label>
           <div class="accordion-body">
-            Pay for your order through any of Fawry's cash points at your convenient time and location across Egypt. Important information:
-  
-            Minimum purchase amount is 10 EGP, maximum 50,000 EGP.
-            Once you place your order, you have to pay within 48 hours. Otherwise the transaction will get cancelled.
-            5 EGP is charged by Fawry as an additional, non-refundable fee
-        
-        Please check your nearest Fawry’s cash point using this link:Store Locator
-        Do not hesitate to call our customer service on 19586 if any question.  
+            For more secure and contactless delivery we recommend using Jumia Pay to stay safe and cashless.
+
+            When you choose Cash on delivery, you can pay for your order in cash when you receive your shipment at home or Jumia’s pick-up stations.
+            
+                Egyptian pounds is accepted only.
+                Please provide the specified amount only when paying for the possibility that there will be enough cash with the delivery representative if a value is paid higher than the requested one.
+                You must pay for the product before opening the shipment. We remind you that you can return the product yourself through the application or site in case of an industrial defect or non-conformity with specifications.
+            
+                Just click on your account > View the details > Apply for a return > Enter the required data. 
       </div>
+      </div> -->
     </div>
-    </div>
-  
+                    
   </div>
-  
+
+</div>
+
+</div>

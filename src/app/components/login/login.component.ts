@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit , ElementRef, ViewChild} from '@angular/core';
+
+import { ApiService } from 'src/app/services/api.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -8,12 +11,31 @@ import { Component, OnInit } from '@angular/core';
 export class LoginComponent implements OnInit {
   emailPattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
   
-  constructor() { }
+  @ViewChild('usernameInput') usernameInput!: ElementRef;
+  @ViewChild('passwordInput') passwordInput!: ElementRef;
+
+  constructor(private service:ApiService, private _router: Router) { }
 
   ngOnInit(): void {
   }
 
-  submitLoginForm(form : object){
-    console.log(form);
+  submitLoginForm(){
+    const request = {
+        "email": this.usernameInput.nativeElement.value,
+        "password": this.passwordInput.nativeElement.value
+    }
+    console.log();
+    this.service.login(request).subscribe( res => {
+      console.log(res)
+        this._router.navigateByUrl("/products")
+    },
+    err=>{
+      alert("you should creata account"+err.status)
+    });
+
   }
 }
+
+
+
+

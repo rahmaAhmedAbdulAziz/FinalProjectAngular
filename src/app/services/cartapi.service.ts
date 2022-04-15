@@ -2,6 +2,8 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 
+const code ='http://localhost:5000'
+
 @Injectable({
   providedIn: 'root'
 })
@@ -30,8 +32,10 @@ export class CartapiService {
   getTotalAmount(){
     let grandTotal = 0;
     this.cartDataList.map((a:any)=>{
-      grandTotal += a.total;
+     grandTotal += a.price;
+      console.log(grandTotal)
     })
+
     return grandTotal
   }
   // Remove Cart data one by one
@@ -48,4 +52,9 @@ export class CartapiService {
     this.cartDataList = []
       this.productList.next(this.cartDataList)
       }
+
+
+cart(cart:any){
+  return this.http.post(`${code}/cart`,cart);
+}
 }

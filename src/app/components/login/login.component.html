@@ -12,10 +12,11 @@
                 Login if you already have an account with our Book Store
               </h2>
             </div>
-            <form #loginForm="ngForm" (ngSubmit)="submitLoginForm(loginForm)">
+            <form #loginForm="ngForm" (ngSubmit)="submitLoginForm()">
               <div class="mb-5">
                 <label for="exampleFormControlInput1" class="form-label mb-3">Email </label>
-                <input type="email" class="form-control " id="Email" ngModel required name="email" #email="ngModel"
+                <input #usernameInput type="email" class="form-control " id="Email" 
+                ngModel required name="email" #email="ngModel"
                   [pattern]="emailPattern " placeholder="name@example.com">
 
 
@@ -30,7 +31,8 @@
               </div>
               <div class="mb-5">
                 <label for="exampleFormControlInput1" class="form-label"> Password</label>
-                <input type="Password" class="form-control" id="Password" ngModel required name="password"
+                <input #passwordInput type="Password" class="form-control"
+                 id="Password" ngModel required name="password"
                   #password="ngModel" placeholder="Password">
                 <div *ngIf="password.touched && !password.valid">
                   <small class="text-danger" *ngIf="password.errors?.['required']">
@@ -41,7 +43,7 @@
               <div class="d-grid gap-2">
 
 
-                 <button routerLink="/products" type="submit" [disabled]="loginForm.invalid" class="btn btn-primary" data-bs-toggle="button">
+                 <button (click)="submitLoginForm()" type="submit" [disabled]="loginForm.invalid" class="btn btn-primary" data-bs-toggle="button">
                   <i id="icn" class=" fa-solid fa-right-to-bracket m-2 "></i>
                   Login
                 </button>

@@ -12,6 +12,7 @@ const routes: Routes = [
   {path:'', redirectTo:'products', pathMatch:'full'},
   {path:'products', component:ProductsComponent},
   {path:'cart', component:CartComponent},
+  {path:'search/:searchTerm', component:ProductsComponent},
 
  
   {
@@ -28,6 +29,14 @@ const routes: Routes = [
   },
   {
     path:'categories' , component:CategoriesComponent
+  },
+  {
+    path:'' , loadChildren:() => import('./pages/home/home.module')
+    .then((m) => m.HomeModule)
+  },
+  {
+    path:'setting' , loadChildren:() => import('./pages/settings/settings.module')
+    .then((m) => m.SettingsModule)
   },
   // {
   //   path:'**' , component:NotFoundPageComponent

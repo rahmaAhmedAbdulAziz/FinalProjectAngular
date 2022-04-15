@@ -14,11 +14,12 @@ export class CategoriesComponent implements OnInit {
     private cartApi:CartapiService) { }
 
   ngOnInit(): void {
-    this.api.getProduct().subscribe(res=>{
-      this.productList=res;
-      this.productList.forEach((a:any) => {
-        Object.assign(a,{quantity:1, total:a.price})
-      });
+    this.api.getAll().subscribe((res:any) =>{
+      console.log(res.books)
+      this.productList=res.books;
+      // this.productList.forEach((a:any) => {
+      //   Object.assign(a,{quantity:1, total:a.price})
+      // });
     })
   }
   addtoCart(books:any){
