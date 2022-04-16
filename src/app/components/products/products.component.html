@@ -53,10 +53,11 @@
             </button> -->
              
        <div class="form-group">
-        <input type="text" class="form-control" placeholder="search product" ngModel="searchText">
-        <a style="text-decoration: none;" class="fas fa-search search-icon"></a>  
+        <input  #searchInput type="text" class="form-control" placeholder="search product" ngModel="searchTerm" [value]="searchTerm" (change)="search()">
+        <a (click)="search()" id="search"> <a style="text-decoration: none;" class="fas fa-search search-icon"></a></a>  
       </div> 
        
+  
           </div>
 
         </div>

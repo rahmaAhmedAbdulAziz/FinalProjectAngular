@@ -30,6 +30,10 @@ categories(){
       return this.http.post(`${code}/auth/register`,form);
       
     }
+    user(form:any){
+      console.log(form);
+      return this.http.post(`${code}/auth/login`,form);
+    }
   }
     // return this.http.get("https://fakestoreapi.com/products").pipe(map((res:any)=>{
     //   return res;

@@ -9,20 +9,20 @@ import { CartapiService } from 'src/app/services/cartapi.service';
 })
 export class CategoriesComponent implements OnInit {
 
-  productList:any;
-  constructor(private api:ApiService,
-    private cartApi:CartapiService) { }
+  cats: any;
+  constructor(private api: ApiService, private cartApi: CartapiService) { }
 
   ngOnInit(): void {
-    this.api.getAll().subscribe((res:any) =>{
-      console.log(res.books)
-      this.productList=res.books;
+    console.log("categories onInit");
+    this.api.categories().subscribe((res: any) => {
+      console.log(res)
+      this.cats = res;
       // this.productList.forEach((a:any) => {
       //   Object.assign(a,{quantity:1, total:a.price})
       // });
     })
   }
-  addtoCart(books:any){
+  addtoCart(books: any) {
     this.cartApi.addToCart(books);
   }
 

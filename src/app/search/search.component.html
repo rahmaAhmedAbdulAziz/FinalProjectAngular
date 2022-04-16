@@ -1,0 +1,5 @@
+<div class="form-group">
+    <input #searchInput type="text" class="form-control" placeholder="search product" ngModel="searchTerm" [value]="searchTerm" (change)="search()">
+   <!-- [(ngModel)]="searchTerm"  -->
+    <button (click)="search()"><a style="text-decoration: none;" class="fas fa-search search-icon"></a>  </button> 
+  </div> 

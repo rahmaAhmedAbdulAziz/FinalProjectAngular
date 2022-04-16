@@ -25,8 +25,10 @@ export class LoginComponent implements OnInit {
         "password": this.passwordInput.nativeElement.value
     }
     console.log();
-    this.service.login(request).subscribe( res => {
+    this.service.login(request).subscribe( (res:any) => {
+      
       console.log(res)
+      localStorage.setItem("username",res.username)
         this._router.navigateByUrl("/products")
     },
     err=>{

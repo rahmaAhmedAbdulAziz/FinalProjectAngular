@@ -34,10 +34,10 @@ const routes: Routes = [
     path:'' , loadChildren:() => import('./pages/home/home.module')
     .then((m) => m.HomeModule)
   },
-  {
-    path:'setting' , loadChildren:() => import('./pages/settings/settings.module')
-    .then((m) => m.SettingsModule)
-  },
+  // {
+  //   path:'setting' , loadChildren:() => import('./pages/settings/settings.module')
+  //   .then((m) => m.SettingsModule)
+  // },
   // {
   //   path:'**' , component:NotFoundPageComponent
   // }

@@ -22,9 +22,19 @@
               <i class="fa-solid fa-user-tie m-1"></i>
               Authors of books</a>
           </li>
-
+          <div class="dropdown" id="drop">
+            <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+           {{username}}</a>
+          
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+              <li><a class="dropdown-item" to="home" routerLink="/" >home</a></li>
+              <li><a class="dropdown-item" to="Categories" routerLink="//categories" > Book Categories</a></li>
+              <li><a class="dropdown-item" to="login" routerLink="/Login" >loge out </a></li>
+            </ul>
+          </div>
 
         </ul>
+      
         <div class="d-grid gap-1 d-md-flex justify-content-md-end">
           <!-- {/*
           <Link to="/signup" class="btn btn-outline-secondary me-md-1" type="button">

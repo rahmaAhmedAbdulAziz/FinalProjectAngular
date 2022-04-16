@@ -19,8 +19,11 @@ import { AuthorsComponent } from './components/authors/authors.component';
 import { CategoriesComponent } from './components/categories/categories.component';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { SearchComponent } from './search/search.component';
 // import { HomeComponent } from './pages/home/home.component';
-// import { SettingsComponent } from './pages/settings/settings.component';
+import { SettingsComponent } from './pages/settings/settings.component';
+// import { RatingModule } from 'ng-starrating';
+
 
 export function rootLoaderFactory(http:HttpClient){
   return new TranslateHttpLoader(http,'assets/i18n.','.json')
@@ -39,12 +42,15 @@ export function rootLoaderFactory(http:HttpClient){
     PayFormComponent,
     AuthorsComponent,
     CategoriesComponent,
+    SearchComponent,
     // HomeComponent,
-    // SettingsComponent,
+    // SettingsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    // RatingModule,
+
     HttpClientModule,
     MatInputModule,
     MatAutocompleteModule,
