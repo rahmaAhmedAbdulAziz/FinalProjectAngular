@@ -1,12 +1,23 @@
 {
-"home":{
-    "tittle":"Home page",
-    "welcom_text":"hallo"
-},
-"settings":{
-    "tittle":"Settings page",
-    "welcom_text":"hallo"
-}
+    "language_button":"العربية",
+    "title":"Home page",
+    "welcome_text":"hallo",
+    "category":"Book category ",
+    "Registeration":"sign up",
+    "login":"sign in",
+    "cart":"Add to cart",
+    "logout":"Logout",
+    "find":"find your book",
+    "stat":"A room without books is like a body withouta soul",
+    "not":"I dont have an account",
+    "password":"password",
+    "Gender":"Gender",
+"Birthday":"Birthday",
+"username":"UserName",
+"Name":"Name",
+"confirm":"confirm password",
+"male":"male",
+"female":"female"
 
 
 }

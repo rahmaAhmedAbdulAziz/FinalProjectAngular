@@ -1,12 +1,21 @@
 {
-    "home":{
-        "tittle":"الصفحة الرئيسية",
-        "welcom_text":"مرحبا"
-    },
-    "settings":{
-        "tittle":"ar_Settings page",
-        "welcom_text":"ar_hallo"
-    }
-    
-    
-    }
+    "language_button":"English",
+    "title":"الصفحة الرئيسية",
+    "welcome_text":"مرحبا", 
+    "category":"أقسام الكتب",
+    "Registeration":"إنشاء حساب",
+    "login":"تسجيل الدخول",
+    "cart":"أضف إلى السلة",
+    "logout":"الخروج",
+    "find":"ابحث عن كتابك",
+    "stat":"الغرفة بلا كتب كالجسد بلا روح,,",
+    "not":"ليس لدي حساب",
+    "password":"كلمة المرور",
+    "Gender":"الجنس",
+"Birthday":"يوم الميلاد ",
+"username":"اسم المستخدم",
+"Name":"الاسم ",
+"confirm":"تأكيد كلمة المرور",
+"male":"رجل",
+"female":"إمرأة"
+}

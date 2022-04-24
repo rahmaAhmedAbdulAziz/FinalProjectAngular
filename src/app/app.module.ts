@@ -26,7 +26,7 @@ import { SettingsComponent } from './pages/settings/settings.component';
 
 
 export function rootLoaderFactory(http:HttpClient){
-  return new TranslateHttpLoader(http,'assets/i18n.','.json')
+  return new TranslateHttpLoader(http)
 }
 
 @NgModule({
@@ -64,7 +64,6 @@ export function rootLoaderFactory(http:HttpClient){
       }
     })
   ],
-  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

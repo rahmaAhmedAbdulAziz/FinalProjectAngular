@@ -3,9 +3,9 @@
     <div class="container-fluid bg-Secondary">
       <div class="row d-flex justify-content-around align-items-center">
         <div class="col-6 " style="height: 100vh;">
-          <div>
-            <h1 class=" mb-5 justify-content-center"><i class="fa-solid fa-right-to-bracket"></i>Login</h1>
-          </div>
+          <!-- <div>
+            <h1 class=" mb-5 justify-content-center"><i class="fa-solid fa-right-to-bracket"></i>{{'login' | translate}}</h1>
+          </div> -->
           <div style=" background-color: white; margin-bottom: 00.67em; padding: 0.67em">
             <div id="text" class=" mb-5 justify-content-center">
               <h2 class="container text-danger ">
@@ -30,7 +30,7 @@
                 </div>
               </div>
               <div class="mb-5">
-                <label for="exampleFormControlInput1" class="form-label"> Password</label>
+                <label for="exampleFormControlInput1" class="form-label"> {{"password"|translate}}</label>
                 <input #passwordInput type="Password" class="form-control"
                  id="Password" ngModel required name="password"
                   #password="ngModel" placeholder="Password">
@@ -45,10 +45,9 @@
 
                  <button (click)="submitLoginForm()" type="submit" [disabled]="loginForm.invalid" class="btn btn-primary" data-bs-toggle="button">
                   <i id="icn" class=" fa-solid fa-right-to-bracket m-2 "></i>
-                  Login
+                  {{'login'|translate}}
                 </button>
-                <button routerLink="/Register" class=" btn btn-outline-secondary " type="button">I dont have an
-                  account</button>
+                <button routerLink="/Register" class=" btn btn-outline-secondary " type="button">{{'not'|translate}}</button>
               </div>
             </form>
 

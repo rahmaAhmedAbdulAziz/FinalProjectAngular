@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
 import { CartapiService } from 'src/app/services/cartapi.service';
 
 @Component({
@@ -7,11 +7,21 @@ import { CartapiService } from 'src/app/services/cartapi.service';
   styleUrls: ['./cart.component.css']
 })
 export class CartComponent implements OnInit {
+  // @ViewChild('products') products!: ElementRef;
   products:any =[];
   allProducts:any =0;
-  constructor(private cartApi:CartapiService) { }
+  cartData:any;
+  token:any
+
+  constructor(private cartApi:CartapiService,  
+    
+    ) { }
+  
 
   ngOnInit(): void {
+    this.token = localStorage.getItem("token") || "";
+    // this.token = JSON.parse( localStorage.getItem("token") || "");
+
     this.cartApi.getProductData().subscribe(res=>{
       this.products = res;
       this.allProducts = this.cartApi.getTotalAmount();
@@ -24,4 +34,22 @@ export class CartComponent implements OnInit {
     this.cartApi.removeAllCart();
   }
 
-}
+  cart(){
+    console.log(this.products)
+//     this.products.map((item: any)=>{
+// this.cartData
+    // })
+    this.cartApi.Checkout({ products:this.products.value,totalPrice:this.allProducts.value,userId:this.token.userId}).subscribe((res: any) => {
+// products:this.products,totalPrice:this.allProducts,
+
+      console.log(res)
+    },
+      (err: any) => {
+        alert("you should creata account" + err.status)
+      }); 
+    }
+  }
+
+
+  
+

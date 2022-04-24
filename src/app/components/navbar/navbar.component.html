@@ -5,7 +5,7 @@
 
       <a class="navbar-brand active" href="/">
         <i class="fa-solid fa-house-chimney m-1"></i>
-        Home</a>
+        {{'title' | translate}}</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -13,43 +13,50 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="/categories">
-              <i class="fa-solid fa-bezier-curve m-1"></i>
-              Book Categories</a>
+            <a class="nav-link active mt-4" aria-current="page" href="/categories">
+              <h2 class="solid"> <i class="fa-solid fa-bezier-curve m-1"></i> {{'category'| translate}}</h2>  </a>
           </li>
-          <li class="nav-item">
+
+
+          
+          <!-- <li class="nav-item">
             <a class="nav-link" href="#">
               <i class="fa-solid fa-user-tie m-1"></i>
               Authors of books</a>
-          </li>
-          <div class="dropdown" id="drop">
-            <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
-           {{username}}</a>
-          
-            <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-              <li><a class="dropdown-item" to="home" routerLink="/" >home</a></li>
-              <li><a class="dropdown-item" to="Categories" routerLink="//categories" > Book Categories</a></li>
-              <li><a class="dropdown-item" to="login" routerLink="/Login" >loge out </a></li>
-            </ul>
-          </div>
+          </li> -->
+         
 
         </ul>
-      
+<div class="conteiner">
         <div class="d-grid gap-1 d-md-flex justify-content-md-end">
           <!-- {/*
           <Link to="/signup" class="btn btn-outline-secondary me-md-1" type="button">
           {/* onClick={() => {history.push("/login");}} > */}
           {/* <i class="fa-solid fa-right-to-bracket m-2"></i>
           sign in</Link> */} -->
-          <a to="login" routerLink="/Login" class=" btn btn-outline-secondary me-md-1" type="button">
+          <a #loginBtn to="login" routerLink="/Login" class=" btn btn-outline-secondary me-md-1" type="button">
             <i class="fa-solid fa-right-to-bracket m-2"></i>
-            sign in</a>
+            {{'login'| translate}}</a>
+            <a #logoutBtn to="login" (click)="logout()" routerLink="/Login" class=" btn btn-outline-secondary me-md-1" type="button">
+              <i class="fa-solid fa-right-to-bracket m-2"></i>
+              {{'logout'| translate}}</a>
 
-          <a to="signup" routerLink="/Register" class=" btn btn-secondary me-md-1" type="button">
+          <a to="signup" routerLink="/Register" class=" btn btn-secondary me-md-1" type="button" #signup>
             <i class="fa-solid fa-user m-2 m-2"></i>
-            sign up</a>
+            {{'Registeration'| translate}}</a>
 
-
+            <div class="dropdown" id="drop" #drop>
+              <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
+                data-bs-toggle="dropdown" aria-expanded="false">
+                {{username}}</a>
+  
+              <ul class="dropdown-menu me-md-1 " aria-labelledby="dropdownMenuLink">
+                <li><a class="dropdown-item" to="home" routerLink="/">home</a></li>
+                <li><a class="dropdown-item" to="Categories" routerLink="//categories"> Book Categories</a></li>
+                <li><a class="dropdown-item" to="login" routerLink="/Login">loge out </a></li>
+              </ul>
+            </div>
+          </div>
           <!-- {/*
           <a to="login" class="btn btn-secondary me-md-5" type="button">
           <i class="fa-solid fa-user m-2"></i>

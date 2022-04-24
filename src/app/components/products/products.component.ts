@@ -29,8 +29,13 @@ export class ProductsComponent implements OnInit {
 
   constructor(private api: ApiService, private router: Router,
     private cartApi: CartapiService, private route: ActivatedRoute) { }
-
+    username:any
+iteam:any
+totalItemNumber: number = 0;
+token:any
   ngOnInit(): void {
+    this.token = localStorage.getItem("token") || "";
+    console.log(this.token.username)
     this.route.params.subscribe(params => {
 
       if (params?.[`searchTerm`])
@@ -50,10 +55,18 @@ export class ProductsComponent implements OnInit {
         //     });
       })
     })
+    this.cartApi.getProductData().subscribe(res => {
+      this.totalItemNumber = res.length;
+    })
   }
   addtoCart(books: any) {
-    this.cartApi.addToCart(books);
-  }
+   if (this.username === "") {
+alert("you must login in")
+  } else {
+        this.cartApi.addToCart(books);
+      }
+    }
+  
   searchTerm: string = "";
 
  
@@ -62,4 +75,9 @@ export class ProductsComponent implements OnInit {
     console.log(this.searchTerm);
     this.router.navigateByUrl('/search/' + this.searchTerm);
   }
+  // description():void{
+  //   this.description=iteam.description;
+  //   console.log(this.searchTerm);
+  //   this.router.navigateByUrl('/search/' + this.searchTerm);
+  // }
 }

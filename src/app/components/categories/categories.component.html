@@ -2,19 +2,45 @@
   <!-- style="background-color:  #D4B996FF ;"
       style="background-color: rgb(255, 255, 235);" -->
   <!-- </div> -->
-  <div class="container ">
+  
+<div class="container ">
+  <!-- <button    button routerLink="cart" class="btn btn">
+      <i style="font-size: 30px;" class="fas fa-cart-plus"></i>
+      <div class="badge bg-danger">{{totalItemNumber}}</div>
+    </button>  -->
     <div class="row">
-      <ng-container *ngFor="let item of cats">
+        
+<div class="container ">
+  <!-- <button    button routerLink="cart" class="btn btn">
+      <i style="font-size: 30px;" class="fas fa-cart-plus"></i>
+      <div class="badge bg-danger">{{totalItemNumber}}</div>
+    </button>  -->
+      <ng-container *ngFor="let item of categories">
 
         <ul>
-          <a href="#">
-            {{item.name}}
+          <a href="/categories">
+           <h1> {{item.name}}</h1>
+            <!-- {{categories.res}} -->
           </a>
-          <li>
-            {{item.description}}
-          </li>
+          <div class="container " >
+            <div class="row">
+              <ng-container *ngFor="let itembooks of item.books">
+                <div class="card col-md-4 g-2 p-1 gy-2 justify-content-center;" >
+                  <!-- <div *ngFor="let i of item.books"> -->
+                    <img src="{{itembooks.image}}" alt="" class="card col-md-3 text-muted m-auto mt-2 w-90 justify-content-center;" >
+
+                   <strong><h3 class="itemdata m-2 justify-content-center">{{itembooks.name}}</h3></strong> 
+                    
+                  <!-- <p class="itemdata">{{itembooks.description}}</p> -->
+                  
+                </div>
+              <!-- </div> -->
+                </ng-container>
+            </div>
+            </div>
         </ul>
       </ng-container>
     </div>
   </div>
+   
 </div>

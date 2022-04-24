@@ -7,13 +7,23 @@ import { CartapiService } from 'src/app/services/cartapi.service';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-  totalItemNumber:number =0;
-  constructor(private cartApi:CartapiService) { }
+  totalItemNumber: number = 0;
+  lang: string = "en";
+  constructor(private cartApi: CartapiService) { }
 
   ngOnInit(): void {
-    this.cartApi.getProductData().subscribe(res=>{
+    this.lang = localStorage.getItem('lang') || 'en';
+    this.cartApi.getProductData().subscribe(res => {
       this.totalItemNumber = res.length;
     })
   }
 
+  changeLang() {
+    console.log(localStorage.getItem('lang'));
+    if (this.lang == 'en')
+      localStorage.setItem('lang', 'ar');
+    else
+      localStorage.setItem('lang', 'en');
+    window.location.reload();  
+  }
 }

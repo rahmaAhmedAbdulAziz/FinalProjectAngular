@@ -1,6 +1,6 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 
 const code ='http://localhost:5000'
 
@@ -10,8 +10,16 @@ const code ='http://localhost:5000'
 export class CartapiService {
   cartDataList:any =[];
   productList= new BehaviorSubject<any>([]);
-
-  constructor(private http:HttpClient) { }
+  cartproduct ={
+    id: Number,
+    title: String,
+    author: String,
+    image: String,
+    price: Number,
+    qty: 1};
+    token:any
+  constructor(private http:HttpClient) { this.token=localStorage.getItem("token")
+}
   // Get Product Data
   getProductData(){
     return this.productList.asObservable();
@@ -23,7 +31,14 @@ export class CartapiService {
   }
   // Add to cart details
   addToCart(product:any){
-    this.cartDataList.push(product);
+   this.cartproduct.id=product._id
+   this.cartproduct.title=product.name
+   this.cartproduct.author=product.author
+   this.cartproduct.image=product.image
+   this.cartproduct.price=product.price
+   this.cartproduct.qty=1
+
+    this.cartDataList.push(this.cartproduct);
     this.productList.next(this.cartDataList);
     this.getTotalAmount();
     console.log(this.cartDataList)
@@ -53,8 +68,27 @@ export class CartapiService {
       this.productList.next(this.cartDataList)
       }
 
+  
 
 cart(cart:any){
-  return this.http.post(`${code}/cart`,cart);
+  console.log(cart)
+return this.http.post(`${code}/auth/cart/add`,cart);
 }
+
+RECEIPT(Receipt:any){
+let headers= new HttpHeaders();
+headers=headers.set("authorization",this.token)
+
+  console.log(headers)
+return this.http.get(`${code}/auth/purchaseHistory`,Receipt);
+
+}
+Checkout(checkout:any){
+  return this.http.post(`${code}/auth/cart/checkout`,checkout);
+
+}
+
+// checkout(payload: object): Observable<ServerResponse<object>> {
+//   return this.http.post<ServerResponse<object>>(baseUrl + checkoutEndpoint, payload);
+// }
 }

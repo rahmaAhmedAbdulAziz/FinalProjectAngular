@@ -34,18 +34,18 @@
 
   <div class='header'>
     <div class='row p-2' >
-      <h1>A room without books is like <br />
-        a body withouta soul.
+      <h1>
+      {{'stat'|translate}}
       </h1>
     </div>
     <div class='row position-relative g-0' style=" background-color:#755139ff">
       <div class='col-12 d-flex justify-content-between'>
         <div>
-          <img src='../../../assets/bookk.png' class='image'>
+          <img src='../../../assets/bookk.png' class='image '>
 
         </div>
         <div class='header-text'>
-          <h3 style= "margin: 10% ; color: beige;" >Find Your Book</h3>
+          <h3 style= "margin: 10% ; color: beige;" >{{'find'|translate}}</h3>
           <!-- <div class='search'>
             <input type="text" placeholder='Enter Your Book Name' style="width: 50%"  />
             <button style="width: 7%">
@@ -74,16 +74,22 @@
       <!-- </div> -->
     <div class="container " >
       <div class="row">
+        <!-- <button    button routerLink="cart" class="btn btn d-flex justify-content-md-end m-2 ">
+          <i style="font-size: 30px;" class="fas fa-cart-plus"></i>
+          <div class="badge bg-danger">{{totalItemNumber}}</div>
+        </button>  -->
         <ng-container *ngFor="let item of productList">
           <div class="card col-md-3 justify-content-center;" >
-            <img src="{{item.image}}" alt="" class="card col-md-3 justify-content-center;" >
-            <h5 class="itemdata">{{item.name}}
+            <img src="{{item.image}}" alt="" class="card col-md-3 text-muted m-auto mt-2 justify-content-center;" >
+            <h5 class="itemdata mt-2">{{item.name}}
             </h5>
             <p class="itemdata">{{item.description}}</p>
             <p><strong>Price:</strong>${{item.price}}</p>
             <p><small></small>${{item.available}}</p>
             <!-- <p>{{item.category}}</p> -->
-            <button class="btn btn-secondary" (click)="addtoCart(item)">Add to cart</button>
+            <!-- <button class="btn btn-secondary m-2" (click)="addtoCart(item)">description</button> -->
+
+            <button class="btn btn-secondary m-2" (click)="addtoCart(item)">Add to cart</button>
             <!-- <button style="margin-top: 3px;" class="btn btn-primary" (click)="addtoCart(item)">Add to cart</button> -->
           </div>
         </ng-container>

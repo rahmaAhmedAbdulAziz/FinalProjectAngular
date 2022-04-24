@@ -31,8 +31,9 @@
               <td colspan="4"></td>
               <td><button (click)="removeAllProduct()" class="btn btn-danger">Empty Cart</button></td>
               <td><button routerLink="/products" class="btn btn-secondary">Shop More</button></td>
-              <td><button  routerLink="/payForm" class="btn btn-success">Check out</button></td>
+              <td><button routerLink="/payForm" type="button" class="btn btn-success">Check out</button></td>
               <td><strong>Total: ${{allProducts}}</strong></td>
+              <!-- routerLink="/payForm"  -->
             </tr>
           </tbody>
         </table>

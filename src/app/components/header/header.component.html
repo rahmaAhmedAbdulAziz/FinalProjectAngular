@@ -27,7 +27,8 @@
       <!-- <i style="font-size: 35px;" class='fas fa-shipping-fast'></i>  -->
       
       <img id='img' src="../../../assets/logoBG.png" alt="" routerLink="/products" width="30%" height="55%"  />
-      
+      <strong style="font-size: 30px; margin-top: 85px;">Book Store</strong>
+
       &nbsp;
       
       
@@ -36,12 +37,14 @@
       </div> -->
       <!-- <span class="fas fa-search search-icon"></span> --> 
     </div> 
-    
-    
-    <button    button routerLink="cart" class="btn btn">
-  <strong style="font-size: 30px; margin-top: 25px;">Book Store</strong>
+    <div class="row">
+    <button  class=" btn btn-outline-secondary d-flex flex-left mb-5" (click)="changeLang()" type="button">
+      <h2>  <i class="fa-solid fa-language"></i>    {{'language_button'|translate}}</h2></button>
+      
+<button    button routerLink="cart" class="btn btn">
       <i style="font-size: 30px;" class="fas fa-cart-plus"></i>
       <div class="badge bg-danger">{{totalItemNumber}}</div>
     </button>
   </div>
+</div>
 </header>

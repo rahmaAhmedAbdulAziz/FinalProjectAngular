@@ -17,3 +17,11 @@ strong{
   color: blue;
   top: 31%;
 }
+.btn{
+  height: 50px;
+  width: 100px;
+  text-align: center;
+margin-left: 0%;
+margin: 1%;
+justify-content: center;
+}

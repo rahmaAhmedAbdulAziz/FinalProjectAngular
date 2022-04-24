@@ -1,4 +1,64 @@
-<form #loginForm="ngForm" (ngSubmit)="submitcart()">
+<ng-container *ngIf="products.length !=0">
+  <div class="container mt-2 mb-2">
+    <div class="card-table">
+      <div class="card-product">
+        <table class="table table-responsive">
+          <thead>
+            <tr>
+              <th>author</th>
+              <th>title</th>
+              <th>Price</th>
+              <th>qty</th>
+              
+              
+            </tr>
+          </thead>
+          <tbody *ngFor ="let item of products, let i = index">
+            <tr>
+
+              <!-- <td>{{i+1}}</td> -->
+            <!-- <td  *ngFor="let user of users, let i = index">{{user.username}}</td> -->
+<td>  {{item.author}}  </td>
+            <td>{{item.title}}</td>
+              <!-- <td><img src="{{item.image}}" style="width: 120px;" alt=""></td> -->
+              <!-- <td style="width: 30%;">{{item.description}}</td> -->
+              <td style="width: 15%;" >{{item.price}}</td>
+              <td style="width: 15%;">{{item.qty}}</td>
+              
+              
+            </tr>
+         
+          </tbody>
+        </table>
+        <div>totalprice:{{totalprice}}</div>
+      </div>
+    </div>
+  </div>
+</ng-container>
+
+
+
+<ng-container *ngIf="products.length ==0">
+  <div class="container">
+    <div class="card">
+      <h4 class="card-title">My Cart</h4>
+    </div>
+    <div class="center">
+      <img
+        src="https://rukminim1.flixcart.com/www/800/800/promos/16/05/2019/d438a32e-765a-4d8b-b4a6-520b560971e8.png?q=90">
+      <h5>Your Cart is empty !</h5>
+      <h6>Add item to it now</h6>
+      <button routerLink="/products" class="btn btn-primary">Shop Now</button>
+    </div>
+  </div>
+</ng-container>
+
+
+
+
+
+
+<!-- <form #loginForm="ngForm" (ngSubmit)="submitcart()">
 
 <div class="accordion container m-3" id="accordionExample">
 
@@ -20,7 +80,7 @@
       </div>
     </div>
   </div>
-  <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+  <div id="collapseOne" class="accordion-collapse collapse show" required aria-labelledby="headingOne" data-bs-parent="#accordionExample">
     <div class="accordion-body">
 
     </div>
@@ -41,8 +101,8 @@
         <div class="accordion-body">
           <form class="row g-3">
             <div class="col-auto">
-              <label for="staticEmail2" class="visually-hidden">Email</label>
-                <input type="text" readonly class="form-control-plaintext" id="staticEmail2" value="number">
+              <label for="staticEmail2" class="visually-hidden"></label>
+                <input type="text" readonly class="form-control-plaintext" id="staticEmail2" value="ntumber">
               </div>
               <div class="col-auto">
                 <label for="inputPassword2" class="visually-hidden">Password</label>
@@ -74,24 +134,7 @@
                           
                               Just click on your account > View the details > Apply for a return > Enter the required data.    
                         </label>
-                 
-      <!-- <div class="form-check">
-        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
-        <label class="form-check-label" for="flexRadioDefault2">
-          Cash On Delivery        </label>
-          <div class="accordion-body">
-            For more secure and contactless delivery we recommend using Jumia Pay to stay safe and cashless.
-
-            When you choose Cash on delivery, you can pay for your order in cash when you receive your shipment at home or Jumia’s pick-up stations.
-            
-                Egyptian pounds is accepted only.
-                Please provide the specified amount only when paying for the possibility that there will be enough cash with the delivery representative if a value is paid higher than the requested one.
-                You must pay for the product before opening the shipment. We remind you that you can return the product yourself through the application or site in case of an industrial defect or non-conformity with specifications.
-            
-                Just click on your account > View the details > Apply for a return > Enter the required data. 
-      </div>
-      </div> -->
-      
+                
     </div>
                     
   </div>
@@ -99,4 +142,6 @@
 </div>
 
 </div>
-</form>
+<button (click)="submitclose()" type="submit" class="btn btn-primary m-3">Confirm identity</button>
+
+</form> -->

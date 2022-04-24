@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Hurricane&family=Inspiration&family=Playfair+Display:ital,wght@1,500&display=swap');
-h1 ,h3 {
+h1 ,h3,h5 {
     font-family: 'Inspiration', cursive;
     /* font-family: 'Playfair Display', serif; */
     font-size: 3rem;
@@ -53,17 +53,17 @@ h1 ,h3 {
   max-width: 100ch;
 }
  .card{
-  padding: 40px;
+  /* padding: 40px; */
    margin: 10px; 
    margin-left: 6%;
    background-color: rgb(255, 255, 241);
 } 
 .card img{
-  width: 200px;
+  width: 15em;
   height: 200px;
   margin-bottom: 15px;
   transition: 0.3s ease-in-out;
-  
+  margin-left: 5px;
 }
 .card img:hover{
   transition: 0.3s ease-in-out;
